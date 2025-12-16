@@ -1,1 +1,179 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>BRY-WATCH — Skeleton Diver (Build 001)</title>
 
+  <style>
+    :root{
+      --bg:#0b0c0f;
+      --fg:#f2f2f2;
+      --muted:#b7bcc7;
+      --line:rgba(255,255,255,.12);
+      --card:rgba(255,255,255,.03);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 70% 10%, rgba(255,255,255,.06), transparent 60%),
+                  radial-gradient(900px 600px at 20% 90%, rgba(255,255,255,.04), transparent 60%),
+                  var(--bg);
+      color:var(--fg);
+      font-family:var(--sans);
+      letter-spacing:.2px;
+    }
+    .wrap{max-width: 920px; margin: 0 auto; padding: 46px 18px 70px;}
+    header{
+      display:flex; justify-content:space-between; align-items:flex-end; gap:16px;
+      padding-bottom:18px; border-bottom:1px solid var(--line);
+    }
+    .brand{font-weight:800; letter-spacing:.7px;}
+    .tag{font-family:var(--mono); color:var(--muted); font-size:12px;}
+    h1{margin:18px 0 6px; font-size: 28px; line-height:1.15;}
+    .sub{margin:0 0 22px; color:var(--muted); max-width: 70ch;}
+    .grid{display:grid; grid-template-columns: 1fr; gap:14px; margin-top:18px;}
+    @media(min-width: 860px){ .grid{grid-template-columns:1fr 1fr;} .span2{grid-column:1/-1;} }
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px 16px 14px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:13px;
+      letter-spacing:.9px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .kv{
+      display:grid;
+      grid-template-columns: 170px 1fr;
+      gap:8px 14px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .k{color:var(--muted);}
+    .v{color:var(--fg);}
+    .note{
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+    }
+    .imgrow{display:grid; gap:10px; margin-top:12px;}
+    @media(min-width:860px){ .imgrow{grid-template-columns:1fr 1fr;} }
+    img{max-width:100%; height:auto; border-radius:12px; border:1px solid var(--line);}
+    footer{
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="brand">BRY-WATCH</div>
+        <div class="tag">THE HIDDEN LAYER</div>
+      </div>
+      <div class="tag">Keine Cookies • Kein Tracking • Statische Seite</div>
+    </header>
+
+    <h1>Skeleton Diver — Build 001</h1>
+    <p class="sub">
+      Diese Seite ist das ruhige Archiv zu einer mechanischen Uhr. Kein Konto, kein Tracking, kein Quatsch —
+      nur Herkunft, Entscheidungen und Zeit.
+    </p>
+
+    <section class="grid">
+      <!-- IDENTITY -->
+      <div class="card">
+        <h2>Identität</h2>
+        <div class="kv">
+          <div class="k">Modell</div><div class="v">Skeleton Diver</div>
+          <div class="k">Build</div><div class="v">001</div>
+          <div class="k">Bau-Datum</div><div class="v">16. Dezember 2025</div>
+          <div class="k">Werk</div><div class="v">Seiko NH70</div>
+          <div class="k">Erbauer</div><div class="v">[DEIN NAME]</div>
+        </div>
+      </div>
+
+      <!-- SPECS -->
+      <div class="card">
+        <h2>Spezifikation</h2>
+        <div class="kv">
+          <div class="k">Gehäuse</div><div class="v">Edelstahl 316L</div>
+          <div class="k">Durchmesser</div><div class="v">38,5 mm (ohne Krone)</div>
+          <div class="k">Lug-to-Lug</div><div class="v">47,5 mm</div>
+          <div class="k">Dicke</div><div class="v">12,5 mm</div>
+          <div class="k">Bandanstoß</div><div class="v">20 mm</div>
+          <div class="k">Glas</div><div class="v">[K1 oder Saphir]</div>
+          <div class="k">Lünette</div><div class="v">[schwarz oder weiß]</div>
+          <div class="k">Band</div><div class="v">Jubilee</div>
+          <div class="k">WR</div><div class="v">[nicht angegeben / getestet: ___]</div>
+          <div class="k">Dial Größe</div><div class="v">28,5 mm</div>
+        </div>
+      </div>
+
+      <!-- BUILD RECORD -->
+      <div class="card span2">
+        <h2>Build Record</h2>
+        <div class="note">• Warum dieses Build:
+  Weil mir ein Skeleton-Build schon lange gefallen hat — Technik sichtbar, aber trotzdem tragbar.
+
+• Wichtigste Entscheidung:
+  Klarer Blick auf das Uhrwerk. Die Uhr soll zeigen, was normalerweise verborgen bleibt.
+
+• Was nicht sofort perfekt war:
+  Die Auswahl der Zeiger. Ablesbarkeit und Proportionen mussten wirklich stimmen.
+
+• Lieblingsdetail:
+  Die Lume. Sobald es dunkel wird, bekommt die Uhr nochmal einen ganz eigenen Charakter.</div>
+
+        <!-- Optional: Bilder einfügen -->
+        <!--
+        <div class="imgrow">
+          <img src="images/build.jpg" alt="Build Detail">
+          <img src="images/wrist.jpg" alt="On wrist">
+        </div>
+        -->
+      </div>
+
+      <!-- TIME LOG -->
+      <div class="card">
+        <h2>Zeitlog</h2>
+        <div class="kv">
+          <div class="k">Fertiggestellt</div><div class="v">2025-12-16</div>
+          <div class="k">Erstes Tragen</div><div class="v">—</div>
+          <div class="k">Erster Kratzer</div><div class="v">—</div>
+          <div class="k">Service</div><div class="v">—</div>
+        </div>
+      </div>
+
+      <!-- OWNERSHIP -->
+      <div class="card">
+        <h2>Besitz</h2>
+        <div class="note">Owner: Private (Test)
+Hinweis: Diese Seite ist für den Scan gedacht, nicht für Werbung.</div>
+      </div>
+    </section>
+
+    <footer>
+      Tipp: Wenn du später verkaufst, kannst du hier eine kurze, saubere Erklärung ergänzen
+      (z.B. „Diese Uhr hat eine NFC-Identität – ohne Tracking“).
+    </footer>
+  </div>
+</body>
+</html>
