@@ -1,87 +1,95 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BRY-WATCH — Skeleton Diver · Build 001</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(
-        circle at top,
-        #1c1f22 0%,
-        #0b0d0f 60%
-      );
-      color: #e5e5e5;
-      line-height: 1.6;
+    :root{
+      --bg1:#1c1f22;
+      --bg2:#0b0d0f;
+      --fg:#e5e5e5;
+      --muted:#9a9a9a;
+      --line:rgba(255,255,255,0.08);
     }
 
-    .container {
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, var(--bg1) 0%, var(--bg2) 60%);
+      color:var(--fg);
+      line-height:1.6;
+    }
+
+    .container{
       max-width: 720px;
       margin: 0 auto;
       padding: 32px 20px 64px;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 48px;
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:16px;
+      margin-bottom:48px;
     }
 
-    .brand-block {
-      display: flex;
-      align-items: flex-end;
-      gap: 14px;
+    .brand-block{
+      display:flex;
+      align-items:flex-end;
+      gap:14px;
+      min-width:0;
     }
 
-    .brand {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
+    .logo{
+      height:44px;
+      width:auto;
+      display:block;
     }
 
-    .tag {
-      font-size: 12px;
-      color: #9a9a9a;
+    .brand{
+      font-size:20px;
+      font-weight:600;
+      letter-spacing:0.05em;
+      line-height:1.1;
     }
 
-    section {
-      margin-bottom: 42px;
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:0.06em;
     }
 
-    h2 {
-      font-size: 16px;
-      letter-spacing: 0.04em;
-      margin-bottom: 14px;
-      font-weight: 600;
+    section{ margin-bottom:42px; }
+
+    h2{
+      font-size:16px;
+      letter-spacing:0.04em;
+      margin:0 0 14px;
+      font-weight:600;
     }
 
-    p, li {
-      font-size: 14px;
-      color: #d0d0d0;
+    p, li{
+      font-size:14px;
+      color:#d0d0d0;
+      margin:0 0 10px;
     }
 
-    ul {
-      padding-left: 18px;
+    ul{ padding-left:18px; margin:0; }
+    li{ margin-bottom:6px; }
+
+    .divider{
+      height:1px;
+      background:var(--line);
+      margin:40px 0;
     }
 
-    li {
-      margin-bottom: 6px;
-    }
-
-    .divider {
-      height: 1px;
-      background: rgba(255,255,255,0.08);
-      margin: 40px 0;
-    }
-
-    footer {
-      font-size: 12px;
-      color: #777;
-      margin-top: 60px;
+    footer{
+      font-size:12px;
+      color:#777;
+      margin-top:60px;
     }
   </style>
 </head>
@@ -92,12 +100,15 @@
     <!-- HEADER -->
     <header>
       <div class="brand-block">
-        <img src="../assets/logo.svg" alt="BRY-WATCH Logo" style="height:42px;">
+        <!-- Logo liegt in GitHub unter: assets/logo.png -->
+        <!-- Wichtig: ../ weil diese Seite in serial-001/ liegt -->
+        <img class="logo" src="../assets/logo.png" alt="BRY-WATCH Logo" />
         <div>
           <div class="brand">BRY-WATCH</div>
           <div class="tag">THE HIDDEN LAYER</div>
         </div>
       </div>
+
       <div class="tag">Keine Cookies · Kein Tracking</div>
     </header>
 
@@ -130,22 +141,21 @@
     <section>
       <h2>Uhrwerk — Seiko NH70</h2>
       <p>
-        Das NH70 ist ein automatisches Skelettwerk aus der NH-Serie von Seiko.
-        Es basiert auf der bewährten Architektur des NH35, wurde jedoch
-        konsequent geöffnet, um die Mechanik sichtbar zu machen.
+        Das NH70 ist ein automatisches Skeleton-Werk aus Seikos NH-Familie.
+        Die Basis ist die robuste, weit verbreitete NH-Architektur – nur konsequent geöffnet,
+        damit du Mechanik wirklich sehen kannst (und nicht nur “Design”).
       </p>
       <ul>
         <li>Automatikwerk mit Handaufzug</li>
         <li>Hacking-Funktion (Sekundenstopp)</li>
         <li>24 Lagersteine</li>
-        <li>21.600 Halbschwingungen / Stunde (3 Hz)</li>
+        <li>21.600 Halbschwingungen/Stunde (3 Hz)</li>
         <li>Gangreserve ca. 41 Stunden</li>
-        <li>Bidirektionaler Rotor (Magic Lever System)</li>
+        <li>Bidirektionaler Aufzug über Seikos Magic-Lever-System</li>
       </ul>
       <p>
-        Das Werk gilt als robust, servicefreundlich und langfristig gut
-        versorgbar – ein bewusster Gegenentwurf zu exotischen, kurzlebigen
-        Lösungen.
+        Was daran für Enthusiasten interessant ist: Du bekommst eine ehrliche, alltagstaugliche Plattform,
+        die sich weltweit gut versorgen lässt – und gleichzeitig den Blick auf die Arbeitsfläche der Uhr freigibt.
       </p>
     </section>
 
@@ -155,13 +165,12 @@
     <section>
       <h2>Zifferblatt</h2>
       <p>
-        Transparentes Skeleton-Dial mit freiem Blick auf das Uhrwerk.
-        Die Indizes sind luminiert und leuchten im Dunkeln,
-        ohne die Offenheit des Designs zu stören.
+        Transparentes Dial mit freiem Blick ins Werk.
+        Die Indizes sind <strong>luminiert</strong> – sie leuchten im Dunkeln –
+        damit die Uhr nachts nicht “nur Skeleton”, sondern wirklich nutzbar bleibt.
       </p>
       <p>
-        Ziel war maximale Ablesbarkeit bei Tag und Nacht,
-        ohne das mechanische Innenleben zu verdecken.
+        Ziel war: Offenheit + Ablesbarkeit. Nicht entweder oder.
       </p>
     </section>
 
@@ -171,18 +180,18 @@
     <section>
       <h2>Gehäuse & Materialien</h2>
       <ul>
-        <li>Gehäusematerial: Massiver Edelstahl 316L</li>
+        <li>Gehäuse: Massiver Edelstahl 316L</li>
         <li>Durchmesser: 38,5 mm (ohne Krone)</li>
         <li>Gehäuselänge: 47,5 mm</li>
-        <li>Gehäusedicke: 12,5 mm</li>
+        <li>Dicke: 12,5 mm</li>
         <li>Glas: Saphirglas</li>
         <li>Lünette: Schwarze Keramik</li>
         <li>Bandanstoß: 20 mm</li>
         <li>Armband: Jubilee</li>
       </ul>
       <p>
-        Die Materialwahl folgt keinem Trend,
-        sondern dem Anspruch auf Haltbarkeit und Alltagstauglichkeit.
+        Ich halte das bewusst schlicht: gute Materialien, saubere Proportionen, keine Nebelkerzen.
+        Wenn du die Uhr trägst, soll sie sich wie ein Werkzeug anfühlen – nicht wie ein Showpiece.
       </p>
     </section>
 
@@ -192,16 +201,15 @@
     <section>
       <h2>Build Record</h2>
       <ul>
-        <li>Ausgangspunkt war die Idee eines ehrlichen Skeleton-Divers</li>
-        <li>Fokus auf freie Sicht und mechanische Tiefe</li>
-        <li>Zeiger bewusst gewählt, um trotz Skeleton gute Ablesbarkeit zu behalten</li>
-        <li>Lume so eingesetzt, dass sie unterstützt – nicht dominiert</li>
-        <li>Proportionen mehrfach angepasst, bis es sich „richtig“ angefühlt hat</li>
+        <li>Startpunkt: Ein Skeleton-Diver, der im Alltag funktioniert – nicht nur auf Fotos</li>
+        <li>Priorität #1: Klarer Blick aufs Werk, ohne die Uhr “unruhig” wirken zu lassen</li>
+        <li>Zeiger: Mehrere Sets getestet, bis Proportion + Ablesbarkeit wirklich gepasst haben</li>
+        <li>Lume: Nicht als Gimmick, sondern als echtes Feature (nachts sofort lesbar)</li>
+        <li>Feintuning: Kleinigkeiten (Winkel, Kontraste, Balance) machen am Ende den Unterschied</li>
       </ul>
       <p>
-        Dieser Build entstand nicht am Reißbrett,
-        sondern Schritt für Schritt am Werk.
-        Entscheidungen wurden getroffen, getestet und teilweise wieder verworfen.
+        Kurz gesagt: Das ist ein Build, bei dem nichts “zufällig” gelandet ist.
+        Und trotzdem ist er nicht steril — er darf getragen werden und Leben bekommen.
       </p>
     </section>
 
@@ -211,18 +219,13 @@
     <section>
       <h2>Gedanke hinter diesem Build</h2>
       <p>
-        Diese Uhr ist kein Vitrinenstück.<br>
-        Sie darf getragen werden, Gebrauchsspuren sammeln
-        und mit der Zeit Charakter entwickeln.
-      </p>
-      <p>
-        Mechanik lebt davon, benutzt zu werden.
+        Diese Uhr ist kein Vitrinenstück. Sie ist dafür gemacht, Zeit mitzunehmen.
+        Patina ist kein Fehler — sie ist der Beweis, dass das Ding lebt.
       </p>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-      © BRY-WATCH · Handmade · Hidden Layer
+      © BRY-WATCH · Handmade · The Hidden Layer
     </footer>
 
   </div>
