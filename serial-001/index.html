@@ -1,179 +1,180 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex,nofollow" />
-  <title>BRY-WATCH — Skeleton Diver (Build 001)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRY-WATCH — Skeleton Diver · Build 001</title>
 
   <style>
-    :root{
-      --bg:#0b0c0f;
-      --fg:#f2f2f2;
-      --muted:#b7bcc7;
-      --line:rgba(255,255,255,.12);
-      --card:rgba(255,255,255,.03);
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    /* ===== Grundlayout ===== */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      /* OPTION 2 – industrieller, dunkler Gradient */
+      background: radial-gradient(
+        circle at top,
+        #1c1f22 0%,
+        #0b0d0f 60%
+      );
+
+      color: #e5e5e5;
+      line-height: 1.6;
     }
-    html,body{height:100%;}
-    body{
-      margin:0;
-      background: radial-gradient(1200px 800px at 70% 10%, rgba(255,255,255,.06), transparent 60%),
-                  radial-gradient(900px 600px at 20% 90%, rgba(255,255,255,.04), transparent 60%),
-                  var(--bg);
-      color:var(--fg);
-      font-family:var(--sans);
-      letter-spacing:.2px;
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
     }
-    .wrap{max-width: 920px; margin: 0 auto; padding: 46px 18px 70px;}
-    header{
-      display:flex; justify-content:space-between; align-items:flex-end; gap:16px;
-      padding-bottom:18px; border-bottom:1px solid var(--line);
+
+    /* ===== Header ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
     }
-    .brand{font-weight:800; letter-spacing:.7px;}
-    .tag{font-family:var(--mono); color:var(--muted); font-size:12px;}
-    h1{margin:18px 0 6px; font-size: 28px; line-height:1.15;}
-    .sub{margin:0 0 22px; color:var(--muted); max-width: 70ch;}
-    .grid{display:grid; grid-template-columns: 1fr; gap:14px; margin-top:18px;}
-    @media(min-width: 860px){ .grid{grid-template-columns:1fr 1fr;} .span2{grid-column:1/-1;} }
-    .card{
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px 16px 14px;
+
+    .brand-block {
+      display: flex;
+      align-items: flex-end;
+      gap: 14px;
     }
-    .card h2{
-      margin:0 0 10px;
-      font-size:13px;
-      letter-spacing:.9px;
-      text-transform: uppercase;
-      color: var(--muted);
+
+    .brand {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
     }
-    .kv{
-      display:grid;
-      grid-template-columns: 170px 1fr;
-      gap:8px 14px;
-      font-family: var(--mono);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-    .k{color:var(--muted);}
-    .v{color:var(--fg);}
-    .note{
-      font-family: var(--mono);
-      font-size: 13px;
-      line-height: 1.65;
-      white-space: pre-wrap;
-    }
-    .imgrow{display:grid; gap:10px; margin-top:12px;}
-    @media(min-width:860px){ .imgrow{grid-template-columns:1fr 1fr;} }
-    img{max-width:100%; height:auto; border-radius:12px; border:1px solid var(--line);}
-    footer{
-      margin-top: 22px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-family: var(--mono);
+
+    .tag {
       font-size: 12px;
-      line-height: 1.55;
+      color: #9a9a9a;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      margin-bottom: 42px;
+    }
+
+    h2 {
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    p, li {
+      font-size: 14px;
+      color: #d0d0d0;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* ===== Divider ===== */
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 40px 0;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      font-size: 12px;
+      color: #777;
+      margin-top: 60px;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <div class="container">
+
+    <!-- HEADER -->
     <header>
-      <div>
-        <div class="brand">BRY-WATCH</div>
-        <div class="tag">THE HIDDEN LAYER</div>
+      <div class="brand-block">
+        <img src="../assets/logo.svg" alt="BRY-WATCH Logo" style="height:42px;">
+        <div>
+          <div class="brand">BRY-WATCH</div>
+          <div class="tag">THE HIDDEN LAYER</div>
+        </div>
       </div>
-      <div class="tag">Keine Cookies • Kein Tracking • Statische Seite</div>
+      <div class="tag">Keine Cookies · Kein Tracking</div>
     </header>
 
-    <h1>Skeleton Diver — Build 001</h1>
-    <p class="sub">
-      Diese Seite ist das ruhige Archiv zu einer mechanischen Uhr. Kein Konto, kein Tracking, kein Quatsch —
-      nur Herkunft, Entscheidungen und Zeit.
-    </p>
-
-    <section class="grid">
-      <!-- IDENTITY -->
-      <div class="card">
-        <h2>Identität</h2>
-        <div class="kv">
-          <div class="k">Modell</div><div class="v">Skeleton Diver</div>
-          <div class="k">Build</div><div class="v">001</div>
-          <div class="k">Bau-Datum</div><div class="v">16. Dezember 2025</div>
-          <div class="k">Werk</div><div class="v">Seiko NH70</div>
-          <div class="k">Erbauer</div><div class="v">[DEIN NAME]</div>
-        </div>
-      </div>
-
-      <!-- SPECS -->
-      <div class="card">
-        <h2>Spezifikation</h2>
-        <div class="kv">
-          <div class="k">Gehäuse</div><div class="v">Edelstahl 316L</div>
-          <div class="k">Durchmesser</div><div class="v">38,5 mm (ohne Krone)</div>
-          <div class="k">Lug-to-Lug</div><div class="v">47,5 mm</div>
-          <div class="k">Dicke</div><div class="v">12,5 mm</div>
-          <div class="k">Bandanstoß</div><div class="v">20 mm</div>
-          <div class="k">Glas</div><div class="v">[K1 oder Saphir]</div>
-          <div class="k">Lünette</div><div class="v">[schwarz oder weiß]</div>
-          <div class="k">Band</div><div class="v">Jubilee</div>
-          <div class="k">WR</div><div class="v">[nicht angegeben / getestet: ___]</div>
-          <div class="k">Dial Größe</div><div class="v">28,5 mm</div>
-        </div>
-      </div>
-
-      <!-- BUILD RECORD -->
-      <div class="card span2">
-        <h2>Build Record</h2>
-        <div class="note">• Warum dieses Build:
-  Weil mir ein Skeleton-Build schon lange gefallen hat — Technik sichtbar, aber trotzdem tragbar.
-
-• Wichtigste Entscheidung:
-  Klarer Blick auf das Uhrwerk. Die Uhr soll zeigen, was normalerweise verborgen bleibt.
-
-• Was nicht sofort perfekt war:
-  Die Auswahl der Zeiger. Ablesbarkeit und Proportionen mussten wirklich stimmen.
-
-• Lieblingsdetail:
-  Die Lume. Sobald es dunkel wird, bekommt die Uhr nochmal einen ganz eigenen Charakter.</div>
-
-        <!-- Optional: Bilder einfügen -->
-        <!--
-        <div class="imgrow">
-          <img src="images/build.jpg" alt="Build Detail">
-          <img src="images/wrist.jpg" alt="On wrist">
-        </div>
-        -->
-      </div>
-
-      <!-- TIME LOG -->
-      <div class="card">
-        <h2>Zeitlog</h2>
-        <div class="kv">
-          <div class="k">Fertiggestellt</div><div class="v">2025-12-16</div>
-          <div class="k">Erstes Tragen</div><div class="v">—</div>
-          <div class="k">Erster Kratzer</div><div class="v">—</div>
-          <div class="k">Service</div><div class="v">—</div>
-        </div>
-      </div>
-
-      <!-- OWNERSHIP -->
-      <div class="card">
-        <h2>Besitz</h2>
-        <div class="note">Owner: Private (Test)
-Hinweis: Diese Seite ist für den Scan gedacht, nicht für Werbung.</div>
-      </div>
+    <!-- IDENTITÄT -->
+    <section>
+      <h2>Skeleton Diver — Build 001</h2>
+      <p>
+        Handgebautes Einzelstück.<br>
+        Mechanische Uhr mit sichtbarem Werk, gebaut aus persönlicher Überzeugung.
+      </p>
     </section>
 
+    <div class="divider"></div>
+
+    <!-- BUILD INFO -->
+    <section>
+      <h2>Build Information</h2>
+      <ul>
+        <li>Seriennummer: 001</li>
+        <li>Bau-Datum: 16. Dezember 2025</li>
+        <li>Werk: Seiko NH70</li>
+        <li>Erbauer: [Dein Name]</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SPECS -->
+    <section>
+      <h2>Technische Daten</h2>
+      <ul>
+        <li>Gehäuse: Edelstahl 316L</li>
+        <li>Durchmesser: 38,5 mm (ohne Krone)</li>
+        <li>Höhe: 12,5 mm</li>
+        <li>Bandanstoß: 20 mm · Jubilee</li>
+        <li>Glas: K1 / Saphir</li>
+        <li>Lünette: 38 × 30,5 mm</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- BUILD RECORD -->
+    <section>
+      <h2>Build Record</h2>
+      <ul>
+        <li>Fokus auf ein offenes Skeleton-Design</li>
+        <li>Maximale Sicht auf das Uhrwerk</li>
+        <li>Bewusste Auswahl der Zeiger</li>
+        <li>Lume-Lesbarkeit bei Nacht</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PHILOSOPHIE -->
+    <section>
+      <h2>Gedanke hinter diesem Build</h2>
+      <p>
+        Diese Uhr wurde nicht gebaut, um perfekt zu bleiben.<br>
+        Sie darf getragen werden, altern und Charakter entwickeln.
+      </p>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-      Tipp: Wenn du später verkaufst, kannst du hier eine kurze, saubere Erklärung ergänzen
-      (z.B. „Diese Uhr hat eine NFC-Identität – ohne Tracking“).
+      © BRY-WATCH · Handmade · Hidden Layer
     </footer>
+
   </div>
 </body>
 </html>
