@@ -12,7 +12,12 @@
       --fg:#e5e5e5;
       --muted:#9a9a9a;
       --line:rgba(255,255,255,0.08);
+      --card:rgba(255,255,255,0.04);
+      --card2:rgba(255,255,255,0.06);
+      --shadow: 0 18px 50px rgba(0,0,0,0.55);
     }
+
+    * { box-sizing: border-box; }
 
     body{
       margin:0;
@@ -23,7 +28,7 @@
     }
 
     .container{
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 32px 20px 64px;
     }
@@ -43,8 +48,9 @@
       min-width:0;
     }
 
+    /* Logo minimal größer als vorher */
     .logo{
-      height:44px;
+      height:50px;
       width:auto;
       display:block;
     }
@@ -60,6 +66,7 @@
       font-size:12px;
       color:var(--muted);
       letter-spacing:0.06em;
+      white-space:nowrap;
     }
 
     section{ margin-bottom:42px; }
@@ -86,6 +93,70 @@
       margin:40px 0;
     }
 
+    .note {
+      background: linear-gradient(180deg, var(--card), transparent);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 14px 12px;
+    }
+
+    /* ===== Gallery Style ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .gallery a {
+      grid-column: span 6;
+      display: block;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      transform: translateZ(0);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.02);
+    }
+
+    .gallery .caption {
+      padding: 10px 12px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,0.15);
+    }
+
+    .gallery a:focus,
+    .gallery a:hover {
+      border-color: rgba(255,255,255,0.18);
+      background: var(--card2);
+    }
+
+    @media (max-width: 720px){
+      header{
+        align-items:flex-start;
+      }
+      .tag{
+        white-space: normal;
+        text-align: right;
+      }
+      .gallery a{
+        grid-column: span 12;
+      }
+      .gallery img{
+        height: 240px;
+      }
+    }
+
     footer{
       font-size:12px;
       color:#777;
@@ -100,8 +171,8 @@
     <!-- HEADER -->
     <header>
       <div class="brand-block">
-        <!-- Logo liegt in GitHub unter: assets/logo.png -->
-        <!-- Wichtig: ../ weil diese Seite in serial-001/ liegt -->
+        <!-- Logo liegt in GitHub unter: assets/logo.png
+             Wichtig: ../ weil diese Seite in serial-001/ liegt -->
         <img class="logo" src="../assets/logo.png" alt="BRY-WATCH Logo" />
         <div>
           <div class="brand">BRY-WATCH</div>
@@ -142,7 +213,7 @@
       <h2>Uhrwerk — Seiko NH70</h2>
       <p>
         Das NH70 ist ein automatisches Skeleton-Werk aus Seikos NH-Familie.
-        Die Basis ist die robuste, weit verbreitete NH-Architektur – nur konsequent geöffnet,
+        Die Basis ist eine robuste, weit verbreitete NH-Architektur – nur konsequent geöffnet,
         damit du Mechanik wirklich sehen kannst (und nicht nur “Design”).
       </p>
       <ul>
@@ -153,10 +224,12 @@
         <li>Gangreserve ca. 41 Stunden</li>
         <li>Bidirektionaler Aufzug über Seikos Magic-Lever-System</li>
       </ul>
-      <p>
-        Was daran für Enthusiasten interessant ist: Du bekommst eine ehrliche, alltagstaugliche Plattform,
-        die sich weltweit gut versorgen lässt – und gleichzeitig den Blick auf die Arbeitsfläche der Uhr freigibt.
-      </p>
+      <div class="note">
+        <p>
+          Für Enthusiasten interessant: Das NH70 ist servicefreundlich, gut verfügbar und
+          langfristig versorgbar — eine ehrliche Plattform, die “getragen werden will”.
+        </p>
+      </div>
     </section>
 
     <div class="divider"></div>
@@ -166,7 +239,7 @@
       <h2>Zifferblatt</h2>
       <p>
         Transparentes Dial mit freiem Blick ins Werk.
-        Die Indizes sind <strong>luminiert</strong> – sie leuchten im Dunkeln –
+        Die Indizes sind <strong>luminiert</strong> (leuchten im Dunkeln),
         damit die Uhr nachts nicht “nur Skeleton”, sondern wirklich nutzbar bleibt.
       </p>
       <p>
@@ -190,8 +263,8 @@
         <li>Armband: Jubilee</li>
       </ul>
       <p>
-        Ich halte das bewusst schlicht: gute Materialien, saubere Proportionen, keine Nebelkerzen.
-        Wenn du die Uhr trägst, soll sie sich wie ein Werkzeug anfühlen – nicht wie ein Showpiece.
+        Materialwahl ohne Show: solide Basis, saubere Proportionen, gutes Tragegefühl.
+        WR/Water Resistance wird hier bewusst nicht angegeben, da nicht offiziell getestet.
       </p>
     </section>
 
@@ -205,7 +278,7 @@
         <li>Priorität #1: Klarer Blick aufs Werk, ohne die Uhr “unruhig” wirken zu lassen</li>
         <li>Zeiger: Mehrere Sets getestet, bis Proportion + Ablesbarkeit wirklich gepasst haben</li>
         <li>Lume: Nicht als Gimmick, sondern als echtes Feature (nachts sofort lesbar)</li>
-        <li>Feintuning: Kleinigkeiten (Winkel, Kontraste, Balance) machen am Ende den Unterschied</li>
+        <li>Feintuning: Kontraste, Balance und kleine Details – bis das Gesamtbild stimmt</li>
       </ul>
       <p>
         Kurz gesagt: Das ist ein Build, bei dem nichts “zufällig” gelandet ist.
@@ -220,8 +293,28 @@
       <h2>Gedanke hinter diesem Build</h2>
       <p>
         Diese Uhr ist kein Vitrinenstück. Sie ist dafür gemacht, Zeit mitzunehmen.
-        Patina ist kein Fehler — sie ist der Beweis, dass das Ding lebt.
+        Gebrauchsspuren sind kein Fehler — sie sind der Beweis, dass das Ding lebt.
       </p>
+    </section>
+
+    <!-- GALLERY -->
+    <section>
+      <h2>Gallery</h2>
+      <p>
+        Zwei Momentaufnahmen dieses Builds. Anklicken öffnet das Bild in voller Größe.
+      </p>
+
+      <div class="gallery">
+        <a href="images/photo-01.jpeg" target="_blank" rel="noopener">
+          <img src="images/photo-01.jpeg" alt="Skeleton Diver — Build 001 · Foto 01" loading="lazy">
+          <div class="caption">Build 001 · Photo 01</div>
+        </a>
+
+        <a href="images/photo-02.jpeg" target="_blank" rel="noopener">
+          <img src="images/photo-02.jpeg" alt="Skeleton Diver — Build 001 · Foto 02" loading="lazy">
+          <div class="caption">Build 001 · Photo 02</div>
+        </a>
+      </div>
     </section>
 
     <footer>
