@@ -1,1 +1,361 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRY-WATCH — Carbon Chronograph · Build 002</title>
+
+  <style>
+    :root{
+      --bg1:#1c1f22;
+      --bg2:#0b0d0f;
+      --fg:#e5e5e5;
+      --muted:#9a9a9a;
+      --line:rgba(255,255,255,0.08);
+      --card:rgba(255,255,255,0.04);
+      --card2:rgba(255,255,255,0.06);
+      --shadow: 0 18px 50px rgba(0,0,0,0.55);
+    }
+
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, var(--bg1) 0%, var(--bg2) 60%);
+      color:var(--fg);
+      line-height:1.6;
+    }
+
+    .container{
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:16px;
+      margin-bottom:48px;
+    }
+
+    .brand-block{
+      display:flex;
+      align-items:flex-end;
+      gap:14px;
+      min-width:0;
+    }
+
+    .logo{
+      height:50px;
+      width:auto;
+      display:block;
+    }
+
+    .brand{
+      font-size:20px;
+      font-weight:600;
+      letter-spacing:0.05em;
+      line-height:1.1;
+    }
+
+    .slogan{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:0.06em;
+      margin-top:2px;
+    }
+
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:0.06em;
+      white-space:nowrap;
+    }
+
+    section{ margin-bottom:42px; }
+
+    h2{
+      font-size:16px;
+      letter-spacing:0.04em;
+      margin:0 0 14px;
+      font-weight:600;
+    }
+
+    p, li{
+      font-size:14px;
+      color:#d0d0d0;
+      margin:0 0 10px;
+    }
+
+    ul{ padding-left:18px; margin:0; }
+    li{ margin-bottom:6px; }
+
+    .divider{
+      height:1px;
+      background:var(--line);
+      margin:40px 0;
+    }
+
+    /* ===== Gallery (Desktop grid) ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      display: block;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover,
+    .card:focus {
+      border-color: rgba(255,255,255,0.18);
+      background: var(--card2);
+      outline: none;
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      padding: 10px 12px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,0.15);
+    }
+
+    /* ===== Swipe Carousel (Mobile) ===== */
+    .gallery-swipe {
+      display: none;
+      gap: 14px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery-swipe::-webkit-scrollbar { height: 8px; }
+    .gallery-swipe::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.12);
+      border-radius: 999px;
+    }
+    .gallery-swipe::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+    }
+
+    .slide {
+      flex: 0 0 88%;
+      scroll-snap-align: center;
+    }
+
+    .hint {
+      display:none;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 8px 0 12px;
+    }
+
+    @media (max-width: 720px){
+      header{ align-items:flex-start; }
+      .gallery-grid { display:none; }
+      .gallery-swipe { display:flex; }
+      .hint { display:block; }
+      .card img { height: 240px; }
+    }
+
+    footer{
+      font-size:12px;
+      color:#777;
+      margin-top:60px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand-block">
+        <img class="logo" src="../assets/logo.png" alt="BRY-WATCH Logo" />
+        <div>
+          <div class="brand">BRY-WATCH</div>
+          <div class="slogan">Handmade Timepieces</div>
+          <div class="tag">Calibre Records</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- IDENTITÄT -->
+    <section>
+      <h2>Carbon Chronograph — Build 002</h2>
+      <p>
+        Eine komplett andere Richtung als Build 001: leichter, sportlicher und bewusst „modern tool“.
+        Carbon-Optik, klare Proportionen und ein Chronographen-Setup, das im Alltag einfach Spaß macht.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- BUILD INFO -->
+    <section>
+      <h2>Build Information</h2>
+      <ul>
+        <li>Seriennummer: 002</li>
+        <li>Bau-Datum: [Datum eintragen]</li>
+        <li>Werk: VK63 Chronograph</li>
+        <li>Erbauer: [Dein Name]</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- WERK DETAILS -->
+    <section>
+      <h2>Uhrwerk — VK63 Chronograph</h2>
+      <p>
+        Dieser Build nutzt ein VK63-Chronographenwerk. Der Fokus liegt hier nicht auf „Show“, sondern auf
+        einem klaren, sportlichen Timing-Setup: Start/Stop/Reset, schnell erfassbar und unkompliziert im Alltag.
+      </p>
+      <ul>
+        <li>Chronographen-Funktion (Timing im Alltag / unterwegs)</li>
+        <li>Konzept: „Wear it, use it“ – schnelles Ablesen, unkompliziertes Handling</li>
+        <li>Passt perfekt zur Carbon-/Tool-Ausrichtung dieses Builds</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- DIAL -->
+    <section>
+      <h2>Zifferblatt</h2>
+      <p>
+        Zifferblatt in <strong>Carbon-Optik</strong> — technisch, ruhig und mit genau dem richtigen Maß an Struktur.
+        Der Look soll nicht schreien, sondern das Gehäusematerial konsequent unterstützen.
+      </p>
+      <p>
+        Passende Zifferblattgröße: <strong>29,5 mm</strong>.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- GEHÄUSE -->
+    <section>
+      <h2>Gehäuse & Materialien</h2>
+      <ul>
+        <li>Gehäusematerial: Kohlefaser / Carbon</li>
+        <li>Durchmesser: 38 mm (ohne Krone)</li>
+        <li>Öse zu Öse: 46,5 mm</li>
+        <li>Dicke: 13 mm</li>
+        <li>Bandanstoß: 20 mm</li>
+        <li>Glas: Saphirglas</li>
+      </ul>
+      <p>
+        Carbon macht hier genau das, was es soll: Gewicht runter, Charakter rauf.
+        Das ist ein Build, der nicht „schwer wirken“ muss, um robust zu sein.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- STRAP -->
+    <section>
+      <h2>Armband — Veganes Canvas</h2>
+      <p>
+        Das Band ist bewusst nicht „Standard“. Es ist ein hochwertiges, veganes Canvas-Band aus Baumwolle,
+        handgefertigt in Deutschland — robust, stabil und trotzdem angenehm tragbar.
+      </p>
+      <ul>
+        <li>Material: Veganes Canvas aus hochwertiger Baumwolle</li>
+        <li>Gewebeart: Klassische Leinwandbindung (identische Vorder- & Rückseite)</li>
+        <li>Imprägnierung: Wasserabweisend durch natürliches Aufquellen der Fasern</li>
+        <li>Design: Ton-in-Ton-Steppnaht für Stabilität & harmonische Optik</li>
+        <li>Bandstärke: ca. 3,5 mm</li>
+        <li>Verarbeitung: Handgefertigt in einer Manufaktur in Deutschland</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- BUILD RECORD -->
+    <section>
+      <h2>Build Record</h2>
+      <ul>
+        <li>Ziel: ein sportlicher Carbon-Chrono, der leicht wirkt, aber nicht „leicht gebaut“ ist</li>
+        <li>Carbon-Optik konsequent durchgezogen: Dial + Case als Einheit</li>
+        <li>Bandwahl bewusst: Canvas statt Stahl — passt zum Tool-Charakter und trägt sich entspannt</li>
+        <li>Proportionen im Fokus: 38 mm / 46,5 mm L2L für ein kompaktes, modernes Tragegefühl</li>
+      </ul>
+      <p>
+        Dieser Build ist „clean“, aber nicht steril. Alles greift ineinander: Carbon, Chrono, Canvas.
+        Genau die Art Uhr, die man anzieht und nicht wieder ablegt.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PHILOSOPHIE -->
+    <section>
+      <h2>Gedanke hinter diesem Build</h2>
+      <p>
+        Build 002 ist dafür gemacht, benutzt zu werden. Carbon, Saphir, Canvas — das ist nicht Vitrine,
+        das ist Alltag. Und genau dafür ist ein Chronograph im echten Leben am coolsten.
+      </p>
+    </section>
+
+    <!-- GALLERY -->
+    <section>
+      <h2>Gallery</h2>
+      <p class="hint">Auf dem Handy: wische nach links/rechts.</p>
+
+      <!-- Mobile Swipe -->
+      <div class="gallery-swipe" aria-label="Photo gallery (swipe)">
+        <a class="card slide" href="images/photo-01.jpeg" target="_blank" rel="noopener">
+          <img src="images/photo-01.jpeg" alt="Build 002 Photo 01" loading="lazy">
+          <div class="caption">Build 002 · Photo 01</div>
+        </a>
+        <a class="card slide" href="images/photo-02.jpeg" target="_blank" rel="noopener">
+          <img src="images/photo-02.jpeg" alt="Build 002 Photo 02" loading="lazy">
+          <div class="caption">Build 002 · Photo 02</div>
+        </a>
+      </div>
+
+      <!-- Desktop Grid -->
+      <div class="gallery-grid" aria-label="Photo gallery (grid)">
+        <a class="card" style="grid-column: span 6;" href="images/photo-01.jpeg" target="_blank" rel="noopener">
+          <img src="images/photo-01.jpeg" alt="Build 002 Photo 01" loading="lazy">
+          <div class="caption">Build 002 · Photo 01</div>
+        </a>
+        <a class="card" style="grid-column: span 6;" href="images/photo-02.jpeg" target="_blank" rel="noopener">
+          <img src="images/photo-02.jpeg" alt="Build 002 Photo 02" loading="lazy">
+          <div class="caption">Build 002 · Photo 02</div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      © BRY-WATCH · Handmade Timepieces · Calibre Records
+    </footer>
+
+  </div>
+</body>
+</html>
 
